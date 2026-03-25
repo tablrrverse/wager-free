@@ -1,0 +1,775 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WagerFree - The Fast Payout & Low Wagering Tracker</title>
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%234f46e5'/><text x='16' y='23' font-family='Arial,sans-serif' font-size='20' font-weight='bold' fill='white' text-anchor='middle'>W</text></svg>"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            body {
+                font-family: "Inter", sans-serif;
+            }
+            .gradient-bg {
+                background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            }
+        </style>
+    </head>
+
+    <body class="bg-gray-50 text-gray-900">
+        <!-- Navigation -->
+        <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16 items-center">
+                    <div class="flex items-center">
+                        <span class="text-2xl font-bold text-indigo-600"
+                            >WagerFree</span
+                        >
+                    </div>
+                    <div class="hidden md:flex space-x-8 text-sm font-medium">
+                        <a
+                            href="#listings"
+                            class="text-gray-600 hover:text-indigo-600"
+                            >Top Casinos</a
+                        >
+                        <a
+                            href="#bonus-guide"
+                            class="text-gray-600 hover:text-indigo-600"
+                            >Bonus Guide</a
+                        >
+                        <a
+                            href="#rtp-games"
+                            class="text-gray-600 hover:text-indigo-600"
+                            >Best Games</a
+                        >
+                        <a
+                            href="#faq"
+                            class="text-gray-600 hover:text-indigo-600"
+                            >FAQ</a
+                        >
+                        <a
+                            href="https://tablrr.app"
+                            target="_blank"
+                            class="text-gray-600 hover:text-indigo-600"
+                            >Built with tablrr</a
+                        >
+                    </div>
+                    <!-- Hamburger button (mobile only) -->
+                    <button
+                        id="menu-toggle"
+                        class="md:hidden p-2 rounded-md text-gray-500 hover:text-indigo-600 hover:bg-gray-100 focus:outline-none"
+                        aria-label="Toggle menu"
+                        onclick="
+                            document
+                                .getElementById('mobile-menu')
+                                .classList.toggle('hidden')
+                        "
+                    >
+                        <svg
+                            class="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"
+                            />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div
+                id="mobile-menu"
+                class="hidden md:hidden border-t border-gray-100 bg-white"
+            >
+                <div
+                    class="flex flex-col px-4 py-3 space-y-1 text-sm font-medium"
+                >
+                    <a
+                        href="#listings"
+                        class="py-2 text-gray-600 hover:text-indigo-600"
+                        onclick="
+                            document
+                                .getElementById('mobile-menu')
+                                .classList.add('hidden')
+                        "
+                        >Top Casinos</a
+                    >
+                    <a
+                        href="#bonus-guide"
+                        class="py-2 text-gray-600 hover:text-indigo-600"
+                        onclick="
+                            document
+                                .getElementById('mobile-menu')
+                                .classList.add('hidden')
+                        "
+                        >Bonus Guide</a
+                    >
+                    <a
+                        href="#rtp-games"
+                        class="py-2 text-gray-600 hover:text-indigo-600"
+                        onclick="
+                            document
+                                .getElementById('mobile-menu')
+                                .classList.add('hidden')
+                        "
+                        >Best Games</a
+                    >
+                    <a
+                        href="#faq"
+                        class="py-2 text-gray-600 hover:text-indigo-600"
+                        onclick="
+                            document
+                                .getElementById('mobile-menu')
+                                .classList.add('hidden')
+                        "
+                        >FAQ</a
+                    >
+                    <a
+                        href="https://tablrr.app"
+                        target="_blank"
+                        class="py-2 text-gray-600 hover:text-indigo-600"
+                        >Built with tablrr</a
+                    >
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <header class="gradient-bg text-white py-16 px-4">
+            <div class="max-w-5xl mx-auto text-center">
+                <div
+                    class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-wider text-indigo-300 uppercase bg-indigo-500/10 border border-indigo-500/20 rounded-full"
+                >
+                    Independent Payout Lab 2026
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                    Stop Losing Your Bonus to
+                    <span class="text-indigo-400">Impossible Rules</span>.
+                </h1>
+                <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                    We track online casinos with the lowest 'playthrough' terms
+                    and the fastest withdrawal speeds. Real data, updated daily.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a
+                        href="#listings"
+                        class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg font-semibold transition"
+                    >
+                        View Today's Top Deals
+                    </a>
+                    <a
+                        href="#how-it-works"
+                        class="bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-lg font-semibold transition"
+                    >
+                        How We Test
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- tablrr listing -->
+        <section id="listings" class="max-w-7xl mx-auto px-4 py-12 -mt-10">
+            <div
+                class="bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden"
+            >
+                <div
+                    class="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50"
+                >
+                    <h2 class="text-lg font-bold text-gray-800">
+                        Verified Low-Wagering Casinos
+                    </h2>
+                    <div class="flex items-center gap-4">
+                        <span
+                            class="hidden sm:inline text-sm text-gray-500 italic"
+                            >Sorted by Withdrawal Speed</span
+                        >
+                    </div>
+                </div>
+
+                <!-- tablrr placeholder (populated server-side by Pages Function) -->
+                <div data-listing-id="o6wiKF5RmBIx2Ny3"></div>
+            </div>
+        </section>
+
+        <!-- Bonus Type Guide -->
+        <section id="bonus-guide" class="max-w-7xl mx-auto px-4 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Know Your Bonus Types</h2>
+                <p class="text-gray-600">
+                    Don't get fooled by big numbers. Here is how we categorize
+                    'Fair' bonuses.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div
+                    class="bg-white p-8 rounded-xl shadow-sm border border-gray-100"
+                >
+                    <div
+                        class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6"
+                    >
+                        <svg
+                            class="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M5 13l4 4L19 7"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">No-Wager Spins</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        The 'Holy Grail'. Anything you win from these spins is
+                        yours to keep as cash immediately. No strings attached.
+                    </p>
+                    <span class="text-xs font-bold text-indigo-600 uppercase"
+                        >Wager: 0x</span
+                    >
+                </div>
+                <div
+                    class="bg-white p-8 rounded-xl shadow-sm border border-gray-100"
+                >
+                    <div
+                        class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-6"
+                    >
+                        <svg
+                            class="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Non-Sticky Bonus</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        You play with your real money first. If you win big, you
+                        can cancel the bonus and withdraw instantly without
+                        wagering.
+                    </p>
+                    <span class="text-xs font-bold text-indigo-600 uppercase"
+                        >Wager: Only if bonus is hit</span
+                    >
+                </div>
+                <div
+                    class="bg-white p-8 rounded-xl shadow-sm border border-gray-100"
+                >
+                    <div
+                        class="w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mb-6"
+                    >
+                        <svg
+                            class="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Low-Playthrough</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Wagering between 1x and 15x. These are mathematically
+                        beatable if you play high RTP (Return to Player) games.
+                    </p>
+                    <span class="text-xs font-bold text-indigo-600 uppercase"
+                        >Wager: 1x - 15x</span
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: High RTP Game Strategy -->
+        <section id="rtp-games" class="bg-slate-900 py-20 text-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12 items-end">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6">
+                            Best Games for Easy Withdrawals
+                        </h2>
+                        <p class="text-slate-400 mb-8 leading-relaxed">
+                            If you have a 5x or 10x wagering requirement, you
+                            need games with a high "Return to Player" (RTP).
+                            Don't play high-volatility slots that eat your
+                            balance. Play these instead:
+                        </p>
+                        <div class="space-y-6">
+                            <div
+                                class="flex items-center justify-between p-4 bg-slate-800 rounded-lg"
+                            >
+                                <span class="font-bold"
+                                    >Blackjack (Classic)</span
+                                >
+                                <span class="text-indigo-400 font-mono"
+                                    >99.5% RTP</span
+                                >
+                            </div>
+                            <div
+                                class="flex items-center justify-between p-4 bg-slate-800 rounded-lg"
+                            >
+                                <span class="font-bold">Baccarat</span>
+                                <span class="text-indigo-400 font-mono"
+                                    >98.9% RTP</span
+                                >
+                            </div>
+                            <div
+                                class="flex items-center justify-between p-4 bg-slate-800 rounded-lg"
+                            >
+                                <span class="font-bold"
+                                    >Blood Suckers Slot</span
+                                >
+                                <span class="text-indigo-400 font-mono"
+                                    >98.0% RTP</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-indigo-600 p-8 rounded-3xl">
+                        <h3 class="text-xl font-bold mb-4">
+                            Pro Strategy: The "Grind"
+                        </h3>
+                        <p class="text-indigo-100 text-sm leading-relaxed mb-6">
+                            When clearing a low-wager bonus, use small,
+                            consistent bets. Betting 1% of your total balance
+                            per round on high RTP games is the safest way to
+                            ensure you reach the withdrawal target with your
+                            profit intact.
+                        </p>
+                        <div
+                            class="text-xs text-indigo-200 border-t border-indigo-500 pt-4"
+                        >
+                            Source: Independent testing by WagerFree Labs.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Bonus Math Comparison -->
+        <section id="bonus-math" class="max-w-7xl mx-auto px-4 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">
+                    Why a $50 Bonus is Better Than $500
+                </h2>
+                <p class="text-gray-600">
+                    Most players are blinded by big numbers. Let's look at the
+                    actual math.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div
+                    class="bg-white p-8 rounded-2xl border border-red-100 shadow-sm"
+                >
+                    <h3
+                        class="text-red-600 font-bold mb-4 uppercase tracking-wider text-sm"
+                    >
+                        The "Trap" Bonus
+                    </h3>
+                    <div class="text-3xl font-bold mb-2">$500 Bonus</div>
+                    <p class="text-gray-500 mb-6 text-sm">
+                        Usually comes with 40x wagering.
+                    </p>
+                    <div class="bg-gray-50 p-4 rounded-lg space-y-2">
+                        <div class="flex justify-between text-sm">
+                            <span>Required Bets:</span>
+                            <span class="font-bold">$20,000</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Withdrawal Odds:</span>
+                            <span class="font-bold text-red-500">Low (2%)</span>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white p-8 rounded-2xl border border-green-100 shadow-sm ring-2 ring-green-500/20"
+                >
+                    <h3
+                        class="text-green-600 font-bold mb-4 uppercase tracking-wider text-sm"
+                    >
+                        The "WagerFree" Bonus
+                    </h3>
+                    <div class="text-3xl font-bold mb-2">$50 Bonus</div>
+                    <p class="text-gray-500 mb-6 text-sm">
+                        Comes with 1x wagering or zero.
+                    </p>
+                    <div class="bg-gray-50 p-4 rounded-lg space-y-2">
+                        <div class="flex justify-between text-sm">
+                            <span>Required Bets:</span>
+                            <span class="font-bold">$50</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>Withdrawal Odds:</span>
+                            <span class="font-bold text-green-500"
+                                >High (95%)</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why This Matters Section -->
+        <section id="how-it-works" class="max-w-4xl mx-auto px-4 py-16">
+            <div>
+                <h2 class="text-3xl font-bold mb-6">
+                    The "Dirty Secret" of Casino Bonuses
+                </h2>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    Most sites promote "$5,000 Welcome Bonuses." What they don't
+                    tell you is the '40x wagering' rule. To withdraw that
+                    $5,000, you have to bet $200,000 first.
+                </p>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    We prefer $50 you can actually keep. Our tracker focuses on
+                    "No-Wager" or "1x Wager" deals where your winnings are cash,
+                    not "bonus credits."
+                </p>
+                <ul class="space-y-3">
+                    <li
+                        class="flex items-center text-sm font-semibold text-gray-700"
+                    >
+                        <svg
+                            class="w-5 h-5 text-green-500 mr-2"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            ></path>
+                        </svg>
+                        We test payouts with real money.
+                    </li>
+                    <li
+                        class="flex items-center text-sm font-semibold text-gray-700"
+                    >
+                        <svg
+                            class="w-5 h-5 text-green-500 mr-2"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            ></path>
+                        </svg>
+                        We clock withdrawal speeds to the minute.
+                    </li>
+                    <li
+                        class="flex items-center text-sm font-semibold text-gray-700"
+                    >
+                        <svg
+                            class="w-5 h-5 text-green-500 mr-2"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            ></path>
+                        </svg>
+                        We flag sites that hide terms in fine print.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section: The "Fast Payout" Checklist -->
+        <section class="max-w-4xl mx-auto px-4 py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">
+                    How to Get Paid in Minutes
+                </h2>
+                <p class="text-gray-600">
+                    Don't let casinos stall your payment. Follow this checklist.
+                </p>
+            </div>
+            <div class="space-y-4">
+                <div
+                    class="flex gap-4 items-start p-6 bg-white border border-gray-100 rounded-xl"
+                >
+                    <div
+                        class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0 font-bold"
+                    >
+                        1
+                    </div>
+                    <div>
+                        <h4 class="font-bold">KYC Pre-Verification</h4>
+                        <p class="text-sm text-gray-500">
+                            Upload your ID and utility bill immediately after
+                            signing up. Don't wait until you win.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="flex gap-4 items-start p-6 bg-white border border-gray-100 rounded-xl"
+                >
+                    <div
+                        class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0 font-bold"
+                    >
+                        2
+                    </div>
+                    <div>
+                        <h4 class="font-bold">Use Crypto or E-Wallets</h4>
+                        <p class="text-sm text-gray-500">
+                            Avoid bank transfers. USDT, Litecoin, or Skrill
+                            withdrawals are usually processed in under an hour.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="flex gap-4 items-start p-6 bg-white border border-gray-100 rounded-xl"
+                >
+                    <div
+                        class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0 font-bold"
+                    >
+                        3
+                    </div>
+                    <div>
+                        <h4 class="font-bold">Avoid "Pending" Periods</h4>
+                        <p class="text-sm text-gray-500">
+                            Some casinos hold your money for 48 hours to hope
+                            you play it back. We only list casinos with "Flush"
+                            withdrawals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Payment Speeds -->
+        <section class="bg-slate-900 text-white py-16">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-16 items-end">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6">
+                            Payment Speed Benchmark
+                        </h2>
+                        <p class="text-slate-400 mb-8">
+                            We test every withdrawal method ourselves. Don't
+                            waste days waiting for a bank wire when you can have
+                            your wins in minutes.
+                        </p>
+                        <div class="space-y-4">
+                            <div
+                                class="bg-slate-800 p-4 rounded-lg flex justify-between items-center"
+                            >
+                                <span>Cryptocurrency (USDT/LTC)</span>
+                                <span class="text-green-400 font-bold"
+                                    >~12 Minutes</span
+                                >
+                            </div>
+                            <div
+                                class="bg-slate-800 p-4 rounded-lg flex justify-between items-center"
+                            >
+                                <span>E-Wallets (Skrill/Neteller)</span>
+                                <span class="text-green-400 font-bold"
+                                    >~45 Minutes</span
+                                >
+                            </div>
+                            <div
+                                class="bg-slate-800 p-4 rounded-lg flex justify-between items-center"
+                            >
+                                <span>Debit Card (VISA Direct)</span>
+                                <span class="text-yellow-400 font-bold"
+                                    >~4 Hours</span
+                                >
+                            </div>
+                            <div
+                                class="bg-slate-800 p-4 rounded-lg flex justify-between items-center"
+                            >
+                                <span>Standard Bank Transfer</span>
+                                <span class="text-red-400 font-bold"
+                                    >3-5 Days</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="bg-indigo-600 rounded-2xl p-8 shadow-2xl">
+                            <h4 class="text-2xl font-bold mb-4 italic">
+                                "The 15-Minute Rule"
+                            </h4>
+                            <p class="text-indigo-100 leading-relaxed">
+                                If a casino takes longer than 24 hours to
+                                approve a verified player's withdrawal, they get
+                                dropped from our top-tier list. Period. We
+                                believe your money should be yours as soon as
+                                you win it.
+                            </p>
+                            <div class="mt-6 flex items-center gap-3">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-indigo-400"
+                                ></div>
+                                <div>
+                                    <p class="text-sm font-bold">Marcus V.</p>
+                                    <p class="text-xs text-indigo-300">
+                                        Lead Payout Tester
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="max-w-4xl mx-auto px-4 py-20">
+            <h2 class="text-3xl font-bold mb-12 text-center">
+                Frequently Asked Questions
+            </h2>
+            <div class="space-y-8">
+                <div class="border-b border-gray-200 pb-6">
+                    <h4 class="text-lg font-bold mb-3">
+                        What is 'Wagering' exactly?
+                    </h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Wagering (or playthrough) is the number of times you
+                        must bet your bonus money before it turns into real
+                        cash. For example, a $10 bonus with a 10x wager means
+                        you must place $100 worth of bets before withdrawing.
+                    </p>
+                </div>
+                <div class="border-b border-gray-200 pb-6">
+                    <h4 class="text-lg font-bold mb-3">
+                        Are these casinos safe?
+                    </h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        We only list casinos that hold valid licenses from
+                        respected authorities (MGA, Curacao, or UKGC). We also
+                        verify their SSL certificates and game fairness (RNG)
+                        audits.
+                    </p>
+                </div>
+                <div class="border-b border-gray-200 pb-6">
+                    <h4 class="text-lg font-bold mb-3">
+                        Why don't all casinos offer 'No-Wager' bonuses?
+                    </h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Because it's expensive for the casino! High-wagering
+                        bonuses are designed to keep you playing until you lose.
+                        No-wager bonuses are a marketing tool used by premium
+                        brands to attract high-quality players.
+                    </p>
+                </div>
+                <div class="border-b border-gray-200 pb-6">
+                    <h4 class="text-lg font-bold mb-3">
+                        How do I get an 'Instant' withdrawal?
+                    </h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Ensure your KYC (Know Your Customer) documents are
+                        approved BEFORE you win. Once verified, stick to Crypto
+                        or E-wallet options to bypass banking delays.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter / Alert Section -->
+        <section class="bg-indigo-700 py-16 px-4">
+            <div class="max-w-4xl mx-auto text-center text-white">
+                <h2 class="text-3xl font-bold mb-4">
+                    Never Miss a 'No-Wager' Deal
+                </h2>
+                <p class="text-indigo-100 mb-8">
+                    We send out an alert whenever a new casino launches with
+                    zero-wagering terms. No spam, just math-based value.
+                </p>
+                <form class="flex flex-col sm:flex-row gap-3 justify-center">
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
+                        class="px-6 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-400 w-full sm:w-80"
+                    />
+                    <button
+                        type="submit"
+                        class="bg-indigo-900 hover:bg-black text-white px-8 py-3 rounded-lg font-bold transition"
+                    >
+                        Get Alerts
+                    </button>
+                </form>
+                <p class="mt-4 text-xs text-indigo-300 italic text-center">
+                    Join 4,500+ smart players already on the list.
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-white border-t border-gray-200 py-12">
+            <div class="max-w-7xl mx-auto px-4">
+                <div
+                    class="flex flex-col md:flex-row justify-between items-center gap-8"
+                >
+                    <div>
+                        <span class="text-xl font-bold text-indigo-600"
+                            >WagerFree</span
+                        >
+                        <p class="text-sm text-gray-500 mt-2">
+                            Built for demo purposes using
+                            <a href="https://tablrr.app" class="underline"
+                                >tablrr</a
+                            >.
+                        </p>
+                    </div>
+                    <div class="flex gap-6">
+                        <a
+                            href="https://www.begambleaware.org"
+                            target="_blank"
+                            class="text-xs font-bold text-gray-400 hover:text-gray-600 uppercase tracking-widest"
+                            >BeGambleAware</a
+                        >
+                        <a
+                            href="#"
+                            class="text-xs font-bold text-gray-400 hover:text-gray-600 uppercase tracking-widest"
+                            >Privacy Policy</a
+                        >
+                        <a
+                            href="#"
+                            class="text-xs font-bold text-gray-400 hover:text-gray-600 uppercase tracking-widest"
+                            >Contact</a
+                        >
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-gray-100 text-center">
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Disclaimer: WagerFree is an independent comparison site.
+                        We receive commissions from brands listed. Online
+                        gambling should be for entertainment only. If you or
+                        someone you know has a gambling problem, please visit
+                        <a
+                            href="https://www.begambleaware.org"
+                            class="underline"
+                            >BeGambleAware.org</a
+                        >. 18+ Only.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="/tablrr.js" defer></script>
+    </body>
+</html>
