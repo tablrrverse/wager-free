@@ -1,44 +1,52 @@
-# wager-free
+# WagerFree tablrr Demo
 
-Example affiliate site built with [tablrr](https://tablrr.app), deployed on Cloudflare Pages with server-side rendered listings.
+A ready-to-deploy affiliate site example built with [tablrr](https://tablrr.app). Fork it, add your API token, and you have a live casino listing page in minutes.
 
-## How it works
+## What's included
 
-The listing (`<div data-listing-id="...">`) is injected server-side by a Cloudflare Pages Function middleware before the HTML reaches the browser — no client-side fetch, no layout shift. The embed response is cached at the edge for 1 year.
+- A fully designed landing page (`index.html`) with your tablrr listing embedded in it
+- The listing loads server-side — visitors and the Gooblebot see content instantly
+- Automatic click and view tracking, so your tablrr dashboard stays up to date
+- Hosted for free on Cloudflare Pages
 
-## Deploy
+## How to deploy
 
-1. Push this directory to a GitHub/GitLab repo
-2. Create a new Cloudflare Pages project, point it at the repo, no build command needed
-3. Set the `TABLRR_TOKEN` secret: **Settings → Environment variables → Add variable** (type: Secret)
-4. Deploy
+You'll need a free [Cloudflare account](https://dash.cloudflare.com/sign-up) and your tablrr API token (find it in your tablrr dashboard under Settings).
 
-## Project structure
+1. **Update the listing ID** — open `index.html` and find the line with `data-listing-id="..."`. Replace the value with your own listing ID from your tablrr dashboard.
 
-```
-├── index.html                     # Static page with data-listing-id placeholder
-├── tablrr.js                      # Click tracking + intersection-observer view tracking
-├── tablrr-verify.txt              # Domain verification token
-└── functions/
-    ├── _middleware.js             # SSR: fetches & injects listing embed into HTML
-    └── api/
-        ├── track-click.js         # POST /api/track-click
-        └── track-view.js          # POST /api/track-view
-```
+2. **Edit the page content** — open `index.html` and customize the text, headings, colors, and any sections to match your brand.
 
-## Cache
+3. **Add your verification file** — log in to your tablrr dashboard, go to Settings → Domain Verification, and download your `tablrr-verify.txt`. Replace the existing one in this folder with yours.
 
-Embed responses are cached at the edge for 1 year via `caches.default`.
+4. **Push to GitHub or GitLab** — create a new repository and push this folder to it.
 
-To bust the cache and fetch fresh data, append `?no_cache` to any page URL:
+5. **Create a Cloudflare Pages project** — in the Cloudflare dashboard go to **Pages → Create a project**, connect your repository, and leave the build command blank. Hit deploy.
+
+6. **Add your API token** — after the first deploy, go to your Pages project **Settings → Environment variables → Add variable**:
+    - Name: `TABLRR_TOKEN`
+    - Value: your tablrr API token (find it in tablrr under Settings)
+    - Type: **Secret** (keeps it private and out of logs)
+
+7. **Redeploy** — trigger a new deploy from the Cloudflare Pages dashboard. Your site is now live with your listing injected.
+
+## Files
+
+| File                           | What it does                                                                        |
+| ------------------------------ | ----------------------------------------------------------------------------------- |
+| `index.html`                   | The page your visitors see                                                          |
+| `tablrr.js`                    | Tracks clicks and listing views                                                     |
+| `tablrr-verify.txt`            | Domain ownership verification                                                       |
+| `functions/_middleware.js`     | Fetches your listing from tablrr and injects it before the page is sent to visitors |
+| `functions/api/track-click.js` | Records affiliate link clicks                                                       |
+| `functions/api/track-view.js`  | Records when a visitor scrolls to a listing                                         |
+
+## Refreshing the listing
+
+Your listing data is cached for 1 year so the page loads as fast as possible. When you update your listing in tablrr and want the site to reflect the changes immediately, visit your site with `?no_cache` added to the URL:
 
 ```
 https://your-site.pages.dev/?no_cache
 ```
 
-## Local development
-
-```sh
-npm install -g wrangler
-wrangler pages dev . --binding TABLRR_TOKEN=your_token_here
-```
+That clears the old cache and loads fresh data. All future visits will use the new version. Or you could set the cache duration shorter and it will auto-clear first time someone visits your site after the cache lifetime expiry.
